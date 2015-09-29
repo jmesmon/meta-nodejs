@@ -17,6 +17,7 @@ NPM_FLAGS ?= ""
 oe_runnpm() {
 
 	export NPM_CONFIG_CACHE="${NPM_CACHE_DIR}"
+	export HOME="${WORKDIR}/npm_home"
 
 	[ -n "${http_proxy}" ] && export NPM_CONFIG_PROXY="${http_proxy}"
 	[ -n "${https_proxy}" ] && export NPM_CONFIG_HTTPS_PROXY="${https_proxy}"
@@ -45,6 +46,7 @@ NPM_FLAGS_NATIVE ?= ""
 oe_runnpm_native() {
 
 	export NPM_CONFIG_CACHE="${NPM_CACHE_DIR_NATIVE}"
+	export HOME="${WORKDIR}/npm_home"
 
 	[ -n "${http_proxy}" ] && export NPM_CONFIG_PROXY="${http_proxy}"
 	[ -n "${https_proxy}" ] && export NPM_CONFIG_HTTPS_PROXY="${https_proxy}"
